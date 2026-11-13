@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
+/*
+ * Tap-preferred hold-taps: a quick tap stays a tap even when the next key is
+ * pressed, so fast typing does not turn letters into their held (number) value.
+ * Holding past tapping-term-ms still triggers the hold behavior.
+ */
+&mt {
+    flavor = "tap-preferred";
+};
+
 / {
     chosen {
         zmk,physical-layout = &default_layout;
